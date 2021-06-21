@@ -6,6 +6,9 @@ class FeedbacksController < ApplicationController
     render json: { status: 'ok', feedbacks: feedback_list }
   end
 
+  def empty_foo
+  end
+
   def create
     require_params = feedback_params
     count_by_url = Feedback.where(url: require_params[:url]).count
